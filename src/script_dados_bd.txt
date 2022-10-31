@@ -1,0 +1,199 @@
+/* Dados da tabela Endereço */
+
+INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('1', 'Rua Parima', '129', '21250430', 'Parada de Lucas', 'Rio de Janeiro', 'Rio de Janeiro');
+INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('2', 'Rua Iranduba', '314', '21250380', 'Cordovil', 'Rio de Janeiro', 'Rio de Janeiro');
+INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('3', 'Rua Porto Carrero', '341', '21250260', 'Cordovil', 'Rio de Janeiro', 'Rio de Janeiro');
+INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('4', 'R. Suruí', '915', '21215575', 'Brás de Pina', 'Rio de Janeiro', 'Rio de Janeiro');
+INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('5', 'R. ibicuí', '224', '21215240', 'Penha Circular', 'Rio de Janeiro', 'Rio de Janeiro');
+INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('6', 'R. Samin', '250', '21235210', 'Irajá', 'Rio de Janeiro', 'Rio de Janeiro');
+INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('7', 'Praça Gen. Tibúrcio', '80', '22290270', 'Urca', 'Rio de Janeiro', 'Rio de Janeiro');
+
+
+/* Dados da tabela Instituição */
+
+INSERT INTO `scoa`.`instituicao` (`id_instituicao`, `nome`, `telefone`, `email`, `id_endereco`, `login`, `senha`) VALUES ('1', 'Instituto Militar de Engenharia - (IME)', '(21) 2546-7080', 'vestibular@ime.eb.mil.br', '7', 'ime', 'ime');
+
+
+/* Dados da tabela Curso */
+
+INSERT INTO `scoa`.`curso` (`id_curso`, `nome`, `coordenador`, `periodo_min`, `periodo_max`, `creditos`, `carga_horaria`, `id_instituicao`) VALUES ('1', 'Sistemas de Informação', 'Carlos Azevedo Neves', '8', '16', '35', '3000', '1');
+
+
+/* Dados da tabela Disciplina */
+
+INSERT INTO `scoa`.`disciplina` (`id_disciplina`, `nome`, `creditos`, `carga_horaria`) VALUES ('1', 'Banco de dados', '5', '180');
+INSERT INTO `scoa`.`disciplina` (`id_disciplina`, `nome`, `creditos`, `carga_horaria`) VALUES ('2', 'Programação web', '4', '160');
+
+
+/* Dados da tabela Disciplina_Curso */
+
+INSERT INTO `scoa`.`disciplina_curso` (`id_curso`, `id_disciplina`) VALUES (1, 1);
+insert into `scoa`.`disciplina_curso` (`id_curso`, `id_disciplina`) values (1, 2);
+
+
+/* Dados da tabela Pessoa */
+
+INSERT INTO `scoa`.`pessoa` (`id_pessoa`, `nome`, `genero`, `idade`, `rg`, `cpf`, `telefone`, `email`, `id_endereco`, `id_instituicao`) VALUES ('1', 'Jorge Nami Harbes', 'm', '38', '16.564.897-4', '134.589.467-85', '(21) 4685-9764', 'jorge@gmail.com', '1', '1');
+INSERT INTO `scoa`.`pessoa` (`id_pessoa`, `nome`, `genero`, `idade`, `rg`, `cpf`, `telefone`, `email`, `id_endereco`, `id_instituicao`) VALUES ('2', 'Mateus Ramos Rangel', 'm', '20', '46.467.589-5', '205.467.698-23', '(21) 1346-7945', 'mateus@outlook.com', '2', '1');
+INSERT INTO `scoa`.`pessoa` (`id_pessoa`, `nome`, `genero`, `idade`, `rg`, `cpf`, `telefone`, `email`, `id_endereco`, `id_instituicao`) VALUES ('3', 'Pedro Henrique da Costa Cantanhede', 'm', '21', '12.564.284-8', '468.963.751-25', '(21) 3645-8952', 'pedro@gmail.com', '3', '1');
+INSERT INTO `scoa`.`pessoa` (`id_pessoa`, `nome`, `genero`, `idade`, `rg`, `cpf`, `telefone`, `email`, `id_endereco`, `id_instituicao`) VALUES ('4', 'Jean Fagundes de Assis', 'm', '26', '72.462.587-9', '321.654.894-58', '(21) 2587-8523', 'jean@gmail.com', '4', '1');
+INSERT INTO `scoa`.`pessoa` (`id_pessoa`, `nome`, `genero`, `idade`, `rg`, `cpf`, `telefone`, `email`, `id_endereco`, `id_instituicao`) VALUES ('5', 'Carlos Eduardo Pantoja', 'm', '38', '36.581.613-6', '095.315.852-64', '(21) 3012-9641', 'pantoja@outlook.com', '5', '1');
+INSERT INTO `scoa`.`pessoa` (`id_pessoa`, `nome`, `genero`, `idade`, `rg`, `cpf`, `telefone`, `email`, `id_endereco`, `id_instituicao`) VALUES ('6', 'Elenice Oliveira Rodrigues', 'f', '35', '80.645.789-1', '056.631.581-41', '(21) 3004-6548', 'elenice@outlook.com', '6', '1');
+
+
+/* Dados da tabela Turma */
+
+INSERT INTO `scoa`.`turma` (`id_turma`, `nome`, `qtde_alunos`, `turno`, `inicio`, `id_curso`) VALUES ('1', '2020_2 T.1CSINF', '4', 'n', '2020-07-01 12:00:00', '1');
+
+
+/* Dados da tabela Aluno */
+
+INSERT INTO `scoa`.`aluno` (`id_aluno`, `matricula`, `login`, `senha`, `cr`, `id_pessoa`, `id_turma`) VALUES ('1', '13451684', 'jorge', 'jorge', '10', '1', '1');
+INSERT INTO `scoa`.`aluno` (`id_aluno`, `matricula`, `login`, `senha`, `cr`, `id_pessoa`, `id_turma`) VALUES ('2', '56481315', 'mateus', 'mateus', '10', '2', '1');
+INSERT INTO `scoa`.`aluno` (`id_aluno`, `matricula`, `login`, `senha`, `cr`, `id_pessoa`, `id_turma`) VALUES ('3', '50315497', 'pedro', 'pedro', '10', '3', '1');
+INSERT INTO `scoa`.`aluno` (`id_aluno`, `matricula`, `login`, `senha`, `cr`, `id_pessoa`, `id_turma`) VALUES ('4', '64978212', 'jean', 'jean', '10', '4', '1');
+
+
+/* Dados da tabela Funcionario */
+
+INSERT INTO `scoa`.`funcionario` (`id_funcionario`, `cargo`, `salario`, `id_pessoa`) VALUES ('1', 'Professor(a)', '12000', '5');
+INSERT INTO `scoa`.`funcionario` (`id_funcionario`, `cargo`, `salario`, `id_pessoa`) VALUES ('2', 'Coordenador(a)', '16000', '6');
+
+
+/* Dados da tabela Professor */
+
+INSERT INTO `scoa`.`professor` (`id_professor`, `login`, `senha`, `id_funcionario`) VALUES ('1', 'pantoja', 'pantoja', '1');
+
+
+/* Dados da tabela Títulos */
+
+INSERT INTO `scoa`.`titulos` (`id_titulo`, `certificado`, `descricao`, `id_professor`) VALUES ('1', 'jhgsjkbhvd254254dvjhdsf', 'Graduação', '1');
+INSERT INTO `scoa`.`titulos` (`id_titulo`, `certificado`, `descricao`, `id_professor`) VALUES ('2', 'khjslkjlj4152gbjhbdfv5dfd', 'Pós-graduação', '1');
+
+
+/* Dados da tabela Pre_requisito */
+
+INSERT INTO `scoa`.`pre_requisito` (`disciplina`,`pre_requisito`) VALUES (2, 1);
+
+
+/* Dados da tabela Sala */
+
+INSERT INTO `scoa`.`sala` (`id_sala`, `turno`, `hora_inicio`, `hora_fim`, `local_sala`, `conteudo_prog`, `periodo`, `id_professor`, `id_disciplina`) VALUES ('1', 'n', '2022-08-01 18:00:00', '2022-08-01 21:00:00', 'Pavilhão B Sala 206', 'Abordaremos todo conteúdo relacionado apenas aos bancos de dados relacionais', '5', '1', '1');
+
+
+/* Dados da tabela Aula */
+
+INSERT INTO `scoa`.`aula` (`id_aula`, `pauta_de_aula`, `data`, `id_sala`) VALUES ('1', 'Primeira aula. Conceitos iniciais', '2022-08-01 18:00:00', '1');
+INSERT INTO `scoa`.`aula` (`id_aula`, `pauta_de_aula`, `data`, `id_sala`) VALUES ('2', 'Segunda aula. Modelo conceitual', '2022-08-02 18:00:00', '1');
+INSERT INTO `scoa`.`aula` (`id_aula`, `pauta_de_aula`, `data`, `id_sala`) VALUES ('3', 'Terceira aula. Modelo conceitual', '2022-09-03 18:00:00', '1');
+
+
+/* Dados da tabela Inscricao */
+
+INSERT INTO `scoa`.`inscricao` (`id_inscricao`, `data`, `aceito`, `id_aluno`, `id_sala`) VALUES ('1', '2022-07-15 12:35:32', '1', '1', '1');
+INSERT INTO `scoa`.`inscricao` (`id_inscricao`, `data`, `aceito`, `id_aluno`, `id_sala`) VALUES ('2', '2022-07-15 12:35:32', '1', '2', '1');
+INSERT INTO `scoa`.`inscricao` (`id_inscricao`, `data`, `aceito`, `id_aluno`, `id_sala`) VALUES ('3', '2022-07-15 12:35:32', '1', '3', '1');
+INSERT INTO `scoa`.`inscricao` (`id_inscricao`, `data`, `aceito`, `id_aluno`, `id_sala`) VALUES ('4', '2022-07-15 12:35:32', '1', '4', '1');
+
+
+/* Dados da tabela Presenca */
+
+INSERT INTO `scoa`.`presenca` (`id_presenca`, `presenca`, `data`, `id_aula`, `id_inscricao`) VALUES ('1', '1', '2022-08-01 18:00:00', '1', '1');
+INSERT INTO `scoa`.`presenca` (`id_presenca`, `presenca`, `data`, `id_aula`, `id_inscricao`) VALUES ('2', '1', '2022-08-01 18:00:00', '1', '2');
+INSERT INTO `scoa`.`presenca` (`id_presenca`, `presenca`, `data`, `id_aula`, `id_inscricao`) VALUES ('3', '1', '2022-08-01 18:00:00', '1', '3');
+INSERT INTO `scoa`.`presenca` (`id_presenca`, `presenca`, `data`, `id_aula`, `id_inscricao`) VALUES ('4', '1', '2022-08-01 18:00:00', '1', '4');
+INSERT INTO `scoa`.`presenca` (`id_presenca`, `presenca`, `data`, `id_aula`, `id_inscricao`) VALUES ('5', '1', '2022-08-02 18:00:00', '2', '1');
+INSERT INTO `scoa`.`presenca` (`id_presenca`, `presenca`, `data`, `id_aula`, `id_inscricao`) VALUES ('6', '1', '2022-08-02 18:00:00', '2', '2');
+INSERT INTO `scoa`.`presenca` (`id_presenca`, `presenca`, `data`, `id_aula`, `id_inscricao`) VALUES ('7', '1', '2022-08-02 18:00:00', '2', '3');
+INSERT INTO `scoa`.`presenca` (`id_presenca`, `presenca`, `data`, `id_aula`, `id_inscricao`) VALUES ('8', '1', '2022-08-02 18:00:00', '2', '4');
+INSERT INTO `scoa`.`presenca` (`id_presenca`, `presenca`, `data`, `id_aula`, `id_inscricao`) VALUES ('9', '1', '2022-09-03 18:00:00', '3', '1');
+INSERT INTO `scoa`.`presenca` (`id_presenca`, `presenca`, `data`, `id_aula`, `id_inscricao`) VALUES ('10', '1', '2022-09-03 18:00:00', '3', '2');
+INSERT INTO `scoa`.`presenca` (`id_presenca`, `presenca`, `data`, `id_aula`, `id_inscricao`) VALUES ('11', '1', '2022-09-03 18:00:00', '3', '3');
+INSERT INTO `scoa`.`presenca` (`id_presenca`, `presenca`, `data`, `id_aula`, `id_inscricao`) VALUES ('12', '1', '2022-09-03 18:00:00', '3', '4');
+
+
+/* Dados da tabela Avaliacao */
+
+INSERT INTO `scoa`.`avaliacao` (`id_avaliacao`, `ordem`, `pontos`, `data`, `id_aula`) VALUES ('1', '0', '3.00', '2022-09-03 18:00:00', '3');
+
+
+/* Dados da tabela Nota */
+
+INSERT INTO `scoa`.`nota` (`id_nota`, `nota`, `id_inscricao`, `id_avaliacao`) VALUES ('1', '3.0', '1', '1');
+INSERT INTO `scoa`.`nota` (`id_nota`, `nota`, `id_inscricao`, `id_avaliacao`) VALUES ('2', '3.0', '2', '1');
+INSERT INTO `scoa`.`nota` (`id_nota`, `nota`, `id_inscricao`, `id_avaliacao`) VALUES ('3', '3.0', '3', '1');
+INSERT INTO `scoa`.`nota` (`id_nota`, `nota`, `id_inscricao`, `id_avaliacao`) VALUES ('4', '3.0', '4', '1');
+
+
+/* Dados da tabela Analise_curricular */
+
+INSERT INTO `scoa`.`analise_curricular` (`id_analise`, `analise`, `data`, `id_professor`, `id_aluno`) VALUES ('1', 'Ótima avaliação. Todos foram bem.', '2022-09-03 18:00:00', '1', '1');
+INSERT INTO `scoa`.`analise_curricular` (`id_analise`, `analise`, `data`, `id_professor`, `id_aluno`) VALUES ('2', 'Ótima avaliação. Todos foram bem.', '2022-09-03 18:00:00', '1', '2');
+INSERT INTO `scoa`.`analise_curricular` (`id_analise`, `analise`, `data`, `id_professor`, `id_aluno`) VALUES ('3', 'Ótima avaliação. Todos foram bem.', '2022-09-03 18:00:00', '1', '3');
+INSERT INTO `scoa`.`analise_curricular` (`id_analise`, `analise`, `data`, `id_professor`, `id_aluno`) VALUES ('4', 'Ótima avaliação. Todos foram bem.', '2022-09-03 18:00:00', '1', '4');
+
+
+/* Dados da tabela Reclamacao */
+
+INSERT INTO `scoa`.`reclamacao` (`id_reclamacao`, `motivo`, `descricao`, `lida`, `id_aluno`) VALUES ('1', '1', 'Insatisfeito com o fato de um professor apenas ler slides nas aulas e não explicar o conteúdo como deveria', '0', '4');
+
+
+/* Dados da tabela Sugestao */
+
+INSERT INTO `scoa`.`sugestao` (`id_sugestao`, `texto_breve`, `setor_sugestao`, `lida`, `id_aluno`) VALUES ('1', 'Gostaria de sugerir que todos os professores colocassem as tarefas no Teams para que os alunos não esquecessem.', 'Professores', '1', '3');
+
+
+/* Dados da tabela Administrador */
+
+INSERT INTO `scoa`.`administrador` (`id_adm`, `nome`, `login`, `senha`) VALUES ('1', 'Matheus', 'matheus', 'matheus');
+INSERT INTO `scoa`.`administrador` (`id_adm`, `nome`, `login`, `senha`) VALUES ('2', 'Jean', 'jean', 'jean');
+INSERT INTO `scoa`.`administrador` (`id_adm`, `nome`, `login`, `senha`) VALUES ('3', 'Pedro', 'pedro', 'pedro');
+INSERT INTO `scoa`.`administrador` (`id_adm`, `nome`, `login`, `senha`) VALUES ('4', 'Mateus', 'mateus', 'mateus');
+INSERT INTO `scoa`.`administrador` (`id_adm`, `nome`, `login`, `senha`) VALUES ('5', 'Harbes', 'harbes', 'harbes');
+
+
+/* Dados da tabela Log */
+
+INSERT INTO `scoa`.`log` (`id_log`, `acao`, `descricao`, `data_acao`, `id_adm`) VALUES ('1', 'Cadastro de instituição', 'Cadastrei as instituições Estácio e Unicarioca', '2022-10-29 16:39:50', '1');
+
+
+/* Dados da tabela Produto */
+
+INSERT INTO `scoa`.`produto` (`id_produto`, `nome`, `referencia`, `descricao`, `estoque_min`, `quantidade`, `estoque_max`, `id_instituicao`) VALUES ('1', 'Tablet', 'ssdf3154', 'Usado nas aulas presenciais', '30', '48', '150', '1');
+
+
+/* Dados da tabela Doc_requeridos */
+
+INSERT INTO `scoa`.`doc_requeridos` (`id_documento`, `nome`) VALUES ('1', 'CPF');
+INSERT INTO `scoa`.`doc_requeridos` (`id_documento`, `nome`) VALUES ('2', 'RG');
+INSERT INTO `scoa`.`doc_requeridos` (`id_documento`, `nome`) VALUES ('3', 'Comprovante de residência');
+INSERT INTO `scoa`.`doc_requeridos` (`id_documento`, `nome`) VALUES ('4', 'Título de eleitor');
+INSERT INTO `scoa`.`doc_requeridos` (`id_documento`, `nome`) VALUES ('5', 'Certificado de reservista (Sexo masculino)');
+
+
+/* Dados da tabela Instituicao_documentos */
+
+INSERT INTO `scoa`.`instituicao_documentos` (`id_instituicao`,`id_documento`) VALUES (1, 1);
+INSERT INTO `scoa`.`instituicao_documentos` (`id_instituicao`,`id_documento`) VALUES (1, 2);
+INSERT INTO `scoa`.`instituicao_documentos` (`id_instituicao`,`id_documento`) VALUES (1, 3);
+INSERT INTO `scoa`.`instituicao_documentos` (`id_instituicao`,`id_documento`) VALUES (1, 4);
+INSERT INTO `scoa`.`instituicao_documentos` (`id_instituicao`,`id_documento`) VALUES (1, 5);
+
+
+/* Dados da tabela Biblioteca */
+
+INSERT INTO `scoa`.`biblioteca` (`id_biblioteca`, `telefone`, `email`, `id_instituicao`) VALUES ('1', '(21) 3154-9658', 'ime.biblioteca@ime.com', '1');
+
+
+/* Dados da tabela Obra */
+
+INSERT INTO `scoa`.`obra` (`id_obra`, `autor`, `nome`, `tipo`, `descricao`, `id_biblioteca`) 
+VALUES ('1', 'Sildenir Ribeiro', 'Programando orientado a objetos', 'Livro', 'Livro sobre tecnologia', '1');
+
+
+/* Dados da tabela Cadastro */
+
+INSERT INTO `scoa`.`cadastro` (`id_cadastro`, `data`, `id_biblioteca`, `id_pessoa`) VALUES ('1', '2022-08-02 18:00:00', '1', '1');
+INSERT INTO `scoa`.`cadastro` (`id_cadastro`, `data`, `id_biblioteca`, `id_pessoa`) VALUES ('2', '2022-08-02 18:00:00', '1', '2');
+INSERT INTO `scoa`.`cadastro` (`id_cadastro`, `data`, `id_biblioteca`, `id_pessoa`) VALUES ('3', '2022-08-02 18:00:00', '1', '3');
+INSERT INTO `scoa`.`cadastro` (`id_cadastro`, `data`, `id_biblioteca`, `id_pessoa`) VALUES ('4', '2022-08-02 18:00:00', '1', '4');

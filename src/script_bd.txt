@@ -1,0 +1,447 @@
+/* Modelo lógico SCOA: */
+
+create database scoa;
+use scoa;
+
+CREATE TABLE Titulos (
+    id_titulo INT PRIMARY KEY UNIQUE  NOT NULL AUTO_INCREMENT,
+    certificado VARCHAR(50),
+    descricao VARCHAR(100),
+    id_professor INT
+) Engine = InnoDB;
+
+CREATE TABLE Professor (
+    id_professor INT PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    login VARCHAR(20),
+    senha VARCHAR(20),
+    id_funcionario INT
+) Engine = InnoDB;
+
+CREATE TABLE Funcionario (
+    id_funcionario INT PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    cargo VARCHAR(50),
+    salario decimal(10,2),
+    id_pessoa INT
+) Engine = InnoDB;
+
+CREATE TABLE Pessoa (
+    id_pessoa INT PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    nome varchar(50),
+    genero char(1),
+    idade smallint,
+    rg char(12),
+    cpf char(14),
+    telefone char(16),
+    email varchar(50),
+    id_endereco int,
+    id_instituicao int
+) Engine = InnoDB;
+
+CREATE TABLE Endereco (
+    id_endereco int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    rua varchar(50),
+    numero int,
+    cep int,
+    bairro varchar(50),
+    cidade varchar(50),
+    estado varchar(50)
+) Engine = InnoDB;
+
+CREATE TABLE Aluno (
+    id_aluno int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    matricula int,
+    login varchar(20),
+    senha varchar(20),
+    cr smallint,
+    id_pessoa INT,
+    id_turma int
+) Engine = InnoDB;
+
+CREATE TABLE Reclamacao (
+    id_reclamacao int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    motivo int,
+    descricao varchar(500),
+    lida TINYINT,
+    id_aluno int
+) Engine = InnoDB;
+
+CREATE TABLE Sugestao (
+    id_sugestao INT PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    texto_breve varchar(500),
+    setor_sugestao varchar(50),
+    lida TINYINT,
+    id_aluno int
+) Engine = InnoDB;
+
+CREATE TABLE Analise_curricular (
+    id_analise int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    analise varchar(500),
+    data datetime,
+    id_professor INT,
+    id_aluno int
+) Engine = InnoDB;
+
+CREATE TABLE Aula (
+    id_aula int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    pauta_de_aula varchar(50),
+    data datetime,
+    anotacoes_gerais varchar(500),
+    id_sala int
+) Engine = InnoDB;
+
+CREATE TABLE Sala (
+    id_sala int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    turno char(1),
+    hora_inicio datetime,
+    hora_fim datetime,
+    local_sala varchar(50),
+    conteudo_prog varchar(1000),
+    periodo char(6),
+    id_professor INT,
+    id_disciplina int
+) Engine = InnoDB;
+
+CREATE TABLE Presenca (
+    id_presenca int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    presenca TINYINT,
+    data datetime,
+    id_aula int,
+    id_inscricao int
+) Engine = InnoDB;
+
+CREATE TABLE Avaliacao (
+    id_avaliacao int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    ordem smallint,
+    pontos decimal(4,2),
+    data datetime,
+    id_aula int
+) Engine = InnoDB;
+
+CREATE TABLE Resultado (
+    id_resultado int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    aprovado TINYINT,
+    nota_final decimal(2,2),
+    id_sala int,
+    id_inscricao int
+) Engine = InnoDB;
+
+CREATE TABLE Turma (
+    id_turma int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    nome varchar(30),
+    qtde_alunos int,
+    turno char(1),
+    inicio datetime,
+    id_curso int
+) Engine = InnoDB;
+
+CREATE TABLE Inscricao (
+    id_inscricao int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    data datetime,
+    aceito TINYINT,
+    id_aluno int,
+    id_sala int
+) Engine = InnoDB;
+
+CREATE TABLE Disciplina (
+    id_disciplina int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    nome varchar(50),
+    creditos int,
+    carga_horaria int
+) Engine = InnoDB;
+
+CREATE TABLE Curso (
+    id_curso int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    nome varchar(50),
+    coordenador varchar(50),
+    periodo_min smallint,
+    periodo_max smallint,
+    creditos int,
+    carga_horaria int,
+    id_instituicao int
+) Engine = InnoDB;
+
+CREATE TABLE Nota (
+    id_nota int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    nota decimal(4,2),
+    id_inscricao int,
+    id_avaliacao int
+) Engine = InnoDB;
+
+CREATE TABLE Pre_requisito (
+    disciplina int,
+    pre_requisito int
+) Engine = InnoDB;
+
+CREATE TABLE Disciplina_Curso (
+    id_curso int,
+    id_disciplina int
+) Engine = InnoDB;
+
+CREATE TABLE Instituicao (
+    id_instituicao int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    nome varchar(50),
+    telefone char(16),
+    email varchar(50),
+    id_endereco int,
+    login varchar(20),
+    senha varchar(20)
+) Engine = InnoDB;
+
+CREATE TABLE Relatorio_folha_pagamento (
+    id_relatorio int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    descricao varchar(500),
+    data datetime,
+    id_instituicao int
+) Engine = InnoDB;
+
+CREATE TABLE Log (
+    id_log int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    acao varchar(100),
+    descricao varchar(500),
+    data_acao datetime,
+    id_adm int
+) Engine = InnoDB;
+
+CREATE TABLE Administrador (
+    id_adm int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    nome varchar(50),
+    login varchar(20),
+    senha varchar(20)
+) Engine = InnoDB;
+
+CREATE TABLE Biblioteca (
+    id_biblioteca int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    telefone char(16),
+    email varchar(50),
+    id_instituicao int
+) Engine = InnoDB;
+
+CREATE TABLE Produto (
+    id_produto int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    nome varchar(50),
+    referencia varchar(20),
+    descricao varchar(500),
+    estoque_min smallint,
+    quantidade smallint,
+    estoque_max int,
+    id_instituicao int
+) Engine = InnoDB;
+
+CREATE TABLE Emprestimo_produto (
+    id_emprestimo int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    qtde_emprestimo smallint,
+    responsavel varchar(50),
+    id_produto int
+) Engine = InnoDB;
+
+CREATE TABLE Doc_requeridos (
+    id_documento int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    nome varchar(50)
+) Engine = InnoDB;
+
+CREATE TABLE Instituicao_documentos (
+    id_instituicao int,
+    id_documento int
+) Engine = InnoDB;
+
+CREATE TABLE Obra (
+    id_obra int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    autor varchar(50),
+    nome varchar(50),
+    tipo varchar(50),
+    descricao varchar(500),
+    id_biblioteca int
+) Engine = InnoDB;
+
+CREATE TABLE Cadastro (
+    id_cadastro int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    data datetime,
+    id_biblioteca int,
+    id_pessoa INT
+) Engine = InnoDB;
+
+CREATE TABLE Pendencia (
+    id_pendencia int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    solucionado TINYINT,
+    id_emprestimo int
+) Engine = InnoDB;
+
+CREATE TABLE Emprestimo (
+    id_emprestimo int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
+    data_emprestimo datetime,
+    data_devolucao datetime,
+    id_obra int,
+    id_cadastro int
+) Engine = InnoDB;
+ 
+ALTER TABLE Titulos ADD CONSTRAINT FK_Titulos_3
+    FOREIGN KEY (id_professor)
+    REFERENCES Professor (id_professor);
+ 
+ALTER TABLE Professor ADD CONSTRAINT FK_Professor_3
+    FOREIGN KEY (id_funcionario)
+    REFERENCES Funcionario (id_funcionario);
+ 
+ALTER TABLE Funcionario ADD CONSTRAINT FK_Funcionario_2
+    FOREIGN KEY (id_pessoa)
+    REFERENCES Pessoa (id_pessoa);
+ 
+ALTER TABLE Pessoa ADD CONSTRAINT FK_Pessoa_2
+    FOREIGN KEY (id_endereco)
+    REFERENCES Endereco (id_endereco);
+ 
+ALTER TABLE Pessoa ADD CONSTRAINT FK_Pessoa_4
+    FOREIGN KEY (id_instituicao)
+    REFERENCES Instituicao (id_instituicao);
+ 
+ALTER TABLE Aluno ADD CONSTRAINT FK_Aluno_3
+    FOREIGN KEY (id_pessoa)
+    REFERENCES Pessoa (id_pessoa);
+ 
+ALTER TABLE Aluno ADD CONSTRAINT FK_Aluno_4
+    FOREIGN KEY (id_turma)
+    REFERENCES Turma (id_turma);
+ 
+ALTER TABLE Reclamacao ADD CONSTRAINT FK_Reclamacao_3
+    FOREIGN KEY (id_aluno)
+    REFERENCES Aluno (id_aluno);
+ 
+ALTER TABLE Sugestao ADD CONSTRAINT FK_Sugestao_3
+    FOREIGN KEY (id_aluno)
+    REFERENCES Aluno (id_aluno);
+ 
+ALTER TABLE Analise_curricular ADD CONSTRAINT FK_Analise_curricular_2
+    FOREIGN KEY (id_professor)
+    REFERENCES Professor (id_professor);
+ 
+ALTER TABLE Analise_curricular ADD CONSTRAINT FK_Analise_curricular_3
+    FOREIGN KEY (id_aluno)
+    REFERENCES Aluno (id_aluno);
+ 
+ALTER TABLE Aula ADD CONSTRAINT FK_Aula_3
+    FOREIGN KEY (id_sala)
+    REFERENCES Sala (id_sala);
+ 
+ALTER TABLE Sala ADD CONSTRAINT FK_Sala_3
+    FOREIGN KEY (id_professor)
+    REFERENCES Professor (id_professor);
+ 
+ALTER TABLE Sala ADD CONSTRAINT FK_Sala_4
+    FOREIGN KEY (id_disciplina)
+    REFERENCES Disciplina (id_disciplina);
+ 
+ALTER TABLE Presenca ADD CONSTRAINT FK_Presenca_3
+    FOREIGN KEY (id_aula)
+    REFERENCES Aula (id_aula);
+ 
+ALTER TABLE Presenca ADD CONSTRAINT FK_Presenca_4
+    FOREIGN KEY (id_inscricao)
+    REFERENCES Inscricao (id_inscricao);
+ 
+ALTER TABLE Avaliacao ADD CONSTRAINT FK_Avaliacao_3
+    FOREIGN KEY (id_aula)
+    REFERENCES Aula (id_aula);
+ 
+ALTER TABLE Resultado ADD CONSTRAINT FK_Resultado_3
+    FOREIGN KEY (id_sala)
+    REFERENCES Sala (id_sala);
+    
+ALTER TABLE Resultado ADD CONSTRAINT FK_Resultado_4
+    FOREIGN KEY (id_inscricao)
+    REFERENCES Inscricao (id_inscricao);
+ 
+ALTER TABLE Turma ADD CONSTRAINT FK_Turma_3
+    FOREIGN KEY (id_curso)
+    REFERENCES Curso (id_curso);
+ 
+ALTER TABLE Inscricao ADD CONSTRAINT FK_Inscricao_3
+    FOREIGN KEY (id_sala)
+    REFERENCES Sala (id_sala);
+ 
+ALTER TABLE Inscricao ADD CONSTRAINT FK_Inscricao_4
+    FOREIGN KEY (id_aluno)
+    REFERENCES Aluno (id_aluno);
+ 
+ALTER TABLE Curso ADD CONSTRAINT FK_Curso_3
+    FOREIGN KEY (id_instituicao)
+    REFERENCES Instituicao (id_instituicao);
+ 
+ALTER TABLE Nota ADD CONSTRAINT FK_Nota_3
+    FOREIGN KEY (id_inscricao)
+    REFERENCES Inscricao (id_inscricao);
+ 
+ALTER TABLE Nota ADD CONSTRAINT FK_Nota_4
+    FOREIGN KEY (id_avaliacao)
+    REFERENCES Avaliacao (id_avaliacao);
+ 
+ALTER TABLE Pre_requisito ADD CONSTRAINT FK_Pre_requisito_1
+    FOREIGN KEY (pre_requisito)
+    REFERENCES Disciplina (id_disciplina);
+ 
+ALTER TABLE Pre_requisito ADD CONSTRAINT FK_Pre_requisito_2
+    FOREIGN KEY (disciplina)
+    REFERENCES Disciplina (id_disciplina);
+ 
+ALTER TABLE Disciplina_Curso ADD CONSTRAINT FK_Disciplina_Curso_1
+    FOREIGN KEY (id_disciplina)
+    REFERENCES Disciplina (id_disciplina);
+ 
+ALTER TABLE Disciplina_Curso ADD CONSTRAINT FK_Disciplina_Curso_2
+    FOREIGN KEY (id_curso)
+    REFERENCES Curso (id_curso);
+ 
+ALTER TABLE Instituicao ADD CONSTRAINT FK_Instituicao_3
+    FOREIGN KEY (id_endereco)
+    REFERENCES Endereco (id_endereco);
+ 
+ALTER TABLE Relatorio_folha_pagamento ADD CONSTRAINT FK_Relatorio_folha_pagamento_3
+    FOREIGN KEY (id_instituicao)
+    REFERENCES Instituicao (id_instituicao);
+ 
+ALTER TABLE Log ADD CONSTRAINT FK_Log_3
+    FOREIGN KEY (id_adm)
+    REFERENCES Administrador (id_adm);
+ 
+ALTER TABLE Biblioteca ADD CONSTRAINT FK_Biblioteca_3
+    FOREIGN KEY (id_instituicao)
+    REFERENCES Instituicao (id_instituicao);
+ 
+ALTER TABLE Produto ADD CONSTRAINT FK_Produto_3
+    FOREIGN KEY (id_instituicao)
+    REFERENCES Instituicao (id_instituicao);
+ 
+ALTER TABLE Emprestimo_produto ADD CONSTRAINT FK_Emprestimo_produto_3
+    FOREIGN KEY (id_produto)
+    REFERENCES Produto (id_produto);
+ 
+ALTER TABLE Instituicao_documentos ADD CONSTRAINT FK_Instituicao_documentos_1
+    FOREIGN KEY (id_instituicao)
+    REFERENCES Instituicao (id_instituicao);
+ 
+ALTER TABLE Instituicao_documentos ADD CONSTRAINT FK_Instituicao_documentos_2
+    FOREIGN KEY (id_documento)
+    REFERENCES Doc_requeridos (id_documento);
+ 
+ALTER TABLE Obra ADD CONSTRAINT FK_Obra_3
+    FOREIGN KEY (id_biblioteca)
+    REFERENCES Biblioteca (id_biblioteca);
+ 
+ALTER TABLE Cadastro ADD CONSTRAINT FK_Cadastro_3
+    FOREIGN KEY (id_pessoa)
+    REFERENCES Pessoa (id_pessoa);
+ 
+ALTER TABLE Cadastro ADD CONSTRAINT FK_Cadastro_4
+    FOREIGN KEY (id_biblioteca)
+    REFERENCES Biblioteca (id_biblioteca);
+ 
+ALTER TABLE Pendencia ADD CONSTRAINT FK_Pendencia_3
+    FOREIGN KEY (id_emprestimo)
+    REFERENCES Emprestimo (id_emprestimo);
+ 
+ALTER TABLE Emprestimo ADD CONSTRAINT FK_Emprestimo_3
+    FOREIGN KEY (id_obra)
+    REFERENCES Obra (id_obra);
+ 
+ALTER TABLE Emprestimo ADD CONSTRAINT FK_Emprestimo_4
+    FOREIGN KEY (id_cadastro)
+    REFERENCES Cadastro (id_cadastro);
