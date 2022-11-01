@@ -5,7 +5,7 @@
 <br>
 <h3>#### ⚒️ Ferramentas</h3>
 
-<p align="justify">O projeto será desenvolvido na linguagem Java com as IDE Eclipse. O banco de dados será desenvolvido e criado com a tecnologia MySQL utilizando o MySQL Workbench para manutenções no banco de dados. Também será utilizada a linguagem UML para modelar o sistema (usando as ferramentas StarUML e Astah), bem como brModel para modelagem conceitual e lógica do Banco de Dados.</p>
+<p align="justify">O projeto será desenvolvido na linguagem Java com as IDE Eclipse. O banco de dados será desenvolvido e criado com a tecnologia MySQL utilizando o MySQL Workbench para manutenções no banco de dados. Também será utilizada a linguagem UML para modelar o sistema (usando as ferramentas StarUML e Astah, bem como brModel para modelagem conceitual e lógica do Banco de Dados).</p>
 <br/>
 <br/>
 
