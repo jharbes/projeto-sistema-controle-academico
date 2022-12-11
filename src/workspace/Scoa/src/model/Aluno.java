@@ -1,6 +1,11 @@
 package model;
 
+import DAO.AlunoDAO;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
 
 public class Aluno {
 	private int id_aluno;
@@ -13,18 +18,19 @@ public class Aluno {
 	private int cr;
 	private Pessoa pessoa;
 	
-	public Aluno(int id_aluno, String matricula, String turno, String login, String senha, String turma,
-			String nome_curso, int cr, Pessoa pessoa) {
+	public Aluno(int id_aluno, String matricula, String turno, String turma, String nome_curso, int cr, Pessoa pessoa) {
 		super();
 		this.id_aluno = id_aluno;
 		this.matricula = matricula;
 		this.turno = turno;
-		this.login = login;
-		this.senha = senha;
 		this.turma = turma;
 		this.nome_curso = nome_curso;
 		this.cr = cr;
 		this.pessoa = pessoa;
+	}
+
+	public Aluno() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public int getId_aluno() {
@@ -108,9 +114,55 @@ public class Aluno {
 	public void verDocRequeridos()
 	public void fazerSugestao()
 	public void fazerReclamacao()
-	public void login()
 	
 	*/
+	
+	public static Aluno Login(String login, String senha) {
+		Aluno aluno = null;
+		if(AlunoDAO.Logar(login, senha)) {
+			
+			ResultSet rs = AlunoDAO.buscaBuscarInformacoesAluno(login, senha);
+			Pessoa pessoa;
+			Endereco endereco;
+			
+			try {
+				while(rs.next()) {
+					endereco = new Endereco(rs.getInt("id_endereco"),
+											rs.getString("rua"),
+											rs.getInt("numero"),
+											rs.getString("cep"),
+											rs.getString("bairro"),
+											rs.getString("cidade"),
+											rs.getString("estado"));
+					
+					pessoa = new Pessoa(	rs.getString("nome"), 
+											rs.getString("genero"),
+											rs.getInt("idade"),
+											rs.getString("rg"),
+											rs.getString("cpf"),
+											rs.getString("telefone"),
+											rs.getString("email"),
+											endereco);
+				
+					aluno = new Aluno(		rs.getInt("id_aluno"), 
+											rs.getString("matricula"),
+											rs.getString("turno"),
+											rs.getString("turma"),
+											rs.getString("curso"),
+											rs.getInt("cr"),
+											pessoa);
+				}
+			} catch (SQLException e) {
+				JOptionPane.showMessageDialog(null, "Falha na conexão com o banco de dados. \nDetalhes: "+ e.getMessage());
+			}
+			
+			
+			return aluno;
+		}else {
+			JOptionPane.showMessageDialog(null, "Login ou senha inválidos.");
+			return aluno;
+		}
+	}
 	
 	public boolean createAluno() {
 		return false;
@@ -127,5 +179,9 @@ public class Aluno {
 	
 	public boolean deleteAluno() {
 		return false;
+	}
+	
+	public ArrayList<String> buscarDisciplinas(int id_aluno){
+		return AlunoDAO.buscarDisciplinas(id_aluno);
 	}
 }

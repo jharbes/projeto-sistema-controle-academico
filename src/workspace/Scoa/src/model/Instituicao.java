@@ -1,6 +1,12 @@
 package model;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+import DAO.InstituicaoDAO;
 
 public class Instituicao {
 	private int id_instituicao;
@@ -11,8 +17,7 @@ public class Instituicao {
 	private String senha;
 	private Endereco endereco;
 
-	public Instituicao(int id_instituicao, String nome, String telefone, String email, String login, String senha,
-			Endereco endereco) {
+	public Instituicao(int id_instituicao, String nome, String telefone, String email, String login, String senha, Endereco endereco) {
 		super();
 		this.id_instituicao = id_instituicao;
 		this.nome = nome;
@@ -23,6 +28,10 @@ public class Instituicao {
 		this.endereco = endereco;
 	}
 	
+	public Instituicao() {
+		super();
+	}
+
 	public int getId_instituicao() {
 		return id_instituicao;
 	}
@@ -88,9 +97,48 @@ public class Instituicao {
 	public void cadastrarProfessor()
 	public void cadastrarAlunos()
 	public void alocarSalaMateriaProfessor()
-	public void login()
 	
 	*/
+	
+	public static Instituicao Login(String login, String senha) {
+		Instituicao inst = null;
+		if(InstituicaoDAO.Logar(login, senha)) {
+			
+			ResultSet rs = InstituicaoDAO.buscaBuscarInformacoesInstituicao(login, senha);
+			Endereco endereco;
+			
+			try {
+				while(rs.next()) {
+					
+					endereco = new Endereco(
+							rs.getInt("id_endereco"),
+							rs.getString("rua"),
+							rs.getInt("numero"),
+							rs.getString("cep"),
+							rs.getString("bairro"),
+							rs.getString("cidade"),
+							rs.getString("estado"));
+					
+					inst = new Instituicao(
+							rs.getInt("id_instituicao"), 
+							rs.getString("nome"),
+							rs.getString("telefone"), 
+							rs.getString("email"), 
+							rs.getString("login"), 
+							rs.getString("senha"),
+							endereco);
+					
+				}
+			} catch (SQLException e) {
+				JOptionPane.showMessageDialog(null, "Falha na conexão com o banco de dados. \nDetalhes: "+ e.getMessage());
+			}
+			
+			return inst;
+		}else {
+			JOptionPane.showMessageDialog(null, "Login ou senha inválidos.");
+			return inst;
+		}
+	}
 	
 	public boolean createInstituicao() {
 		return false;

@@ -1,4 +1,11 @@
-/model/
-/Controller/
 /view/
+/Controller/
+/fragments/
+/images/
+/fragmentsAluno/
+/model/
 /DAO/
+/Disciplina/
+/fragmentsInstituicao/
+/fragmentsProfessor/
+/fragmentsAdm/

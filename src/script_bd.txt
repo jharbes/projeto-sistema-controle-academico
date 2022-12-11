@@ -146,7 +146,8 @@ CREATE TABLE Disciplina (
     id_disciplina int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
     nome varchar(50),
     creditos int,
-    carga_horaria int
+    carga_horaria int,
+    id_curso int
 ) Engine = InnoDB;
 
 CREATE TABLE Curso (
@@ -169,12 +170,8 @@ CREATE TABLE Nota (
 
 CREATE TABLE Pre_requisito (
     disciplina int,
-    pre_requisito int
-) Engine = InnoDB;
-
-CREATE TABLE Disciplina_Curso (
-    id_curso int,
-    id_disciplina int
+    pre_requisito int,
+    primary key(disciplina, pre_requisito)
 ) Engine = InnoDB;
 
 CREATE TABLE Instituicao (
@@ -224,6 +221,7 @@ CREATE TABLE Produto (
     estoque_min smallint,
     quantidade smallint,
     estoque_max int,
+    tipo varchar(30),
     id_instituicao int
 ) Engine = InnoDB;
 
@@ -231,7 +229,8 @@ CREATE TABLE Emprestimo_produto (
     id_emprestimo int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
     qtde_emprestimo smallint,
     responsavel varchar(50),
-    id_produto int
+    id_produto int,
+    id_pessoa int
 ) Engine = InnoDB;
 
 CREATE TABLE Doc_requeridos (
@@ -241,7 +240,8 @@ CREATE TABLE Doc_requeridos (
 
 CREATE TABLE Instituicao_documentos (
     id_instituicao int,
-    id_documento int
+    id_documento int,
+    primary key(id_instituicao, id_documento)
 ) Engine = InnoDB;
 
 CREATE TABLE Obra (
@@ -382,11 +382,7 @@ ALTER TABLE Pre_requisito ADD CONSTRAINT FK_Pre_requisito_2
     FOREIGN KEY (disciplina)
     REFERENCES Disciplina (id_disciplina);
  
-ALTER TABLE Disciplina_Curso ADD CONSTRAINT FK_Disciplina_Curso_1
-    FOREIGN KEY (id_disciplina)
-    REFERENCES Disciplina (id_disciplina);
- 
-ALTER TABLE Disciplina_Curso ADD CONSTRAINT FK_Disciplina_Curso_2
+ALTER TABLE Disciplina ADD CONSTRAINT FK_Disciplina_3
     FOREIGN KEY (id_curso)
     REFERENCES Curso (id_curso);
  
@@ -413,6 +409,10 @@ ALTER TABLE Produto ADD CONSTRAINT FK_Produto_3
 ALTER TABLE Emprestimo_produto ADD CONSTRAINT FK_Emprestimo_produto_3
     FOREIGN KEY (id_produto)
     REFERENCES Produto (id_produto);
+
+ALTER TABLE Emprestimo_produto ADD CONSTRAINT FK_Emprestimo_produto_4
+    FOREIGN KEY (id_pessoa)
+    REFERENCES Pessoa (id_pessoa);
  
 ALTER TABLE Instituicao_documentos ADD CONSTRAINT FK_Instituicao_documentos_1
     FOREIGN KEY (id_instituicao)

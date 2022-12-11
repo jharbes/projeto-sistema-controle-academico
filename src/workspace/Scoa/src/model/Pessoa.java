@@ -3,7 +3,6 @@ package model;
 import java.util.ArrayList;
 
 public class Pessoa {
-	private int id_pessoa;
 	private String nome;
 	private String genero;
 	private int idade;
@@ -11,26 +10,22 @@ public class Pessoa {
 	private String cpf;
 	private String telefone;
 	private String email;
-	private String nome_instituicao;
 	private Endereco endereco;
 	
-	public Pessoa(int id_pessoa, String nome, String genero, int idade, String rg, String cpf, String telefone,
-			String email, String nome_instituicao, Endereco endereco) {
+	public Pessoa(String nome, String genero, int idade, String rg, String cpf, String telefone, String email, Endereco endereco) {
 		super();
-		this.id_pessoa = id_pessoa;
 		this.nome = nome;
 		this.genero = genero;
 		this.idade = idade;
 		this.rg = rg;
 		this.cpf = cpf;
 		this.telefone = telefone;
-		this.email = email;
-		this.nome_instituicao = nome_instituicao;
+		this.email = email;	
 		this.endereco = endereco;
 	}
 
-	public int getId_pessoa() {
-		return id_pessoa;
+	public Pessoa() {
+		super();
 	}
 
 	public String getNome() {
@@ -61,16 +56,8 @@ public class Pessoa {
 		return email;
 	}
 
-	public String getNome_instituicao() {
-		return nome_instituicao;
-	}
-
 	public Endereco getEndereco() {
 		return endereco;
-	}
-
-	public void setId_pessoa(int id_pessoa) {
-		this.id_pessoa = id_pessoa;
 	}
 
 	public void setNome(String nome) {
@@ -99,10 +86,6 @@ public class Pessoa {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public void setNome_instituicao(String nome_instituicao) {
-		this.nome_instituicao = nome_instituicao;
 	}
 
 	public void setEndereco(Endereco endereco) {

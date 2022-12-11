@@ -1,0 +1,16 @@
+#Config
+#Thu Dec 08 18:00:40 BRT 2022
+cfg.tipodefault=0
+cfg.apagartextoaoeditar=true
+cfg.location.salvar=true
+cfg.mostrarids=false
+cfg.ancorador=true
+cfg.recentes=C\:\\Users\\mathe\\Documents\\Faculdade\\5\u00BA per\u00EDodo\\Engenharia de Software\\Scoa\\src\\Diagramas\\Modelo l\u00F3gico SCOA.brM3;C\:\\Users\\mathe\\Documents\\Faculdade\\5\u00BA per\u00EDodo\\Engenharia de Software\\Scoa\\src\\Diagramas\\modeloConceitual-DB-scoa.brM3;C\:\\Users\\mathe\\Documents\\Faculdade\\5\u00BA per\u00EDodo\\Engenharia de Software\\Scoa\\Diagramas\\modeloConceitual-DB-scoa.brM3;C\:\\Users\\mathe\\Documents\\Faculdade\\5\u00BA per\u00EDodo\\Engenharia de Software\\Scoa\\Diagramas\\Modelo l\u00F3gico SCOA.brM3;C\:\\Users\\mathe\\Desktop\\Modelo l\u00F3gico SCOA.brM3
+cfg.autosalvarintervalo=5
+cfg.mostrartooltips=true
+cfg.mostrardimensoesaomover=true
+cfg.mostrargrade=true
+cfg.propaguedeletetolines=true
+cfg.location.x=-8
+cfg.location.y=-776
+cfg.gradelargura=23

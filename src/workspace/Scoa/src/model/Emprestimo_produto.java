@@ -9,9 +9,10 @@ public class Emprestimo_produto {
 	private String login;
 	private String senha;
 	private String turma;
+	private String tipo;
 	
 	public Emprestimo_produto(int id_emprestimo, String qtde_emprestimo, String nome_produto, String login,
-			String senha, String turma) {
+			String senha, String turma, String tipo) {
 		super();
 		this.id_emprestimo = id_emprestimo;
 		this.qtde_emprestimo = qtde_emprestimo;
@@ -19,6 +20,7 @@ public class Emprestimo_produto {
 		this.login = login;
 		this.senha = senha;
 		this.turma = turma;
+		this.tipo = tipo;
 	}
 
 	public int getId_emprestimo() {
@@ -44,6 +46,10 @@ public class Emprestimo_produto {
 	public String getTurma() {
 		return turma;
 	}
+	
+	public String getTipo() {
+		return tipo;
+	}
 
 	public void setId_emprestimo(int id_emprestimo) {
 		this.id_emprestimo = id_emprestimo;
@@ -67,6 +73,10 @@ public class Emprestimo_produto {
 
 	public void setTurma(String turma) {
 		this.turma = turma;
+	}
+	
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 	
 	
