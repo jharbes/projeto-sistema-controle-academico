@@ -15,12 +15,12 @@ public class LancarNotas extends javax.swing.JInternalFrame {
 
         jLabel1 = new javax.swing.JLabel();
 
-        jLabel1.setText("Tela para lançamento de notas de avaliações");
+        jLabel1.setText("Tela para lanÃ§amento de notas de avaliaÃ§Ãµes");
 
         setPreferredSize(new java.awt.Dimension(1000, 538));
         setBackground(Color.WHITE);
         
-        // tirando os padrões de efeito que já vem no JInternalFrame
+        // tirando os padrÃµes de efeito que jÃ¡ vÃªm no JInternalFrame
         ((javax.swing.plaf.basic.BasicInternalFrameUI) this.getUI()).setNorthPane(null);
         setBorder(null);
         

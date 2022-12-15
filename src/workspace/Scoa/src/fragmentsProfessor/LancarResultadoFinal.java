@@ -15,12 +15,12 @@ public class LancarResultadoFinal extends javax.swing.JInternalFrame {
 
         jLabel1 = new javax.swing.JLabel();
 
-        jLabel1.setText("Tela para lanÁamento de resultado final");
+        jLabel1.setText("Tela para lan√ßamento de resultado final");
 
         setPreferredSize(new java.awt.Dimension(1000, 538));
         setBackground(Color.WHITE);
         
-        // tirando os padrıes de efeito que j· vem no JInternalFrame
+        // tirando os padr√µes de efeito que j√° v√™m no JInternalFrame
         ((javax.swing.plaf.basic.BasicInternalFrameUI) this.getUI()).setNorthPane(null);
         setBorder(null);
         

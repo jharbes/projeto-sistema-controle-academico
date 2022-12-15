@@ -1,11 +1,10 @@
-/view/
 /Controller/
-/fragments/
-/images/
-/fragmentsAluno/
-/model/
 /DAO/
-/Disciplina/
+/fragmentsAdm/
+/fragmentsAluno/
 /fragmentsInstituicao/
 /fragmentsProfessor/
-/fragmentsAdm/
+/images/
+/model/
+/mysql-connector-j-8.0.31.jar
+/view/

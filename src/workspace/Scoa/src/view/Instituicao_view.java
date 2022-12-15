@@ -57,7 +57,7 @@ public class Instituicao_view extends JFrame{
 	
 	private javax.swing.JDesktopPane mainContent;
 	
-	// Gerando uma Instituição
+	// Gerando uma InstituiÃ§Ã£o
 	private Instituicao inst;
 
 	// Atributos relacionados as telas
@@ -148,13 +148,13 @@ public class Instituicao_view extends JFrame{
         menuPrincipal.setBackground(Color.WHITE);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Portal da instituição - " + inst.getNome());
+        setTitle("Portal da instituiÃ§Ã£o - " + inst.getNome());
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1000, 600));
 
         // Construindo o menu Home
         menuHome.setText("Home");
-        minhasInfos.setText("Minhas informações");
+        minhasInfos.setText("Minhas informaÃ§Ãµes");
         menuHome.add(minhasInfos);
         cadastrarProduto.setText("Cadastrar produto");
         menuHome.add(cadastrarProduto);
@@ -197,7 +197,7 @@ public class Instituicao_view extends JFrame{
         menuAluno.add(cadastrarAluno);
         mostrarAlunos.setText("Mostrar alunos");
         menuAluno.add(mostrarAlunos);
-        documentosAluno.setText("Pendência de documentos");
+        documentosAluno.setText("PendÃªncia de documentos");
         menuAluno.add(documentosAluno);
         
         menuPrincipal.add(menuAluno);
@@ -221,7 +221,7 @@ public class Instituicao_view extends JFrame{
         menuBiblioteca.add(cadastrarObra);
         mostrarObras.setText("Mostrar obras");
         menuBiblioteca.add(mostrarObras);
-        mostrarPendencias.setText("Mostrar pendências");
+        mostrarPendencias.setText("Mostrar pendÃªncias");
         menuBiblioteca.add(mostrarPendencias);
         emprestarObra.setText("Emprestar obra");
         menuBiblioteca.add(emprestarObra);
@@ -234,7 +234,7 @@ public class Instituicao_view extends JFrame{
         // Colocando o menu principal no MenuBar
         setJMenuBar(menuPrincipal);
         
-        // Instanciando a tela default que já abre na abertura inicial da tela
+        // Instanciando a tela default que jÃ¡ abre na abertura inicial da tela
         telaMinhasInfos = new MinhasInfos();
         mainContent.add(telaMinhasInfos);
         telaMinhasInfos.show();

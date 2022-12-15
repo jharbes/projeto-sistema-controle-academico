@@ -57,11 +57,11 @@ public class Adm_view extends JFrame{
 
         // Construindo o menu Home
         menuHome.setText("Home");
-        minhasInfos.setText("Minhas informações");
+        minhasInfos.setText("Minhas informaÃ§Ãµes");
         menuHome.add(minhasInfos);
-        cadInstituicao.setText("Cadastrar instituição");
+        cadInstituicao.setText("Cadastrar instituiÃ§Ã£o");
         menuHome.add(cadInstituicao);
-        exibirInstituicao.setText("Exibir instituições");
+        exibirInstituicao.setText("Exibir instituiÃ§Ãµes");
         menuHome.add(exibirInstituicao);
         
         menuPrincipal.add(menuHome);
@@ -69,7 +69,7 @@ public class Adm_view extends JFrame{
         // Colocando o menu principal no MenuBar
         setJMenuBar(menuPrincipal);
         
-        // Instanciando a tela default que já abre na abertura inicial da tela
+        // Instanciando a tela default que jÃ¡ abre na abertura inicial da tela
         telaMinhasInfos = new MinhasInfos();
         mainContent.add(telaMinhasInfos);
         telaMinhasInfos.show();

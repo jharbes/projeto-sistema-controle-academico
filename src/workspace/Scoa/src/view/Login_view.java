@@ -69,16 +69,16 @@ public class Login_view extends JFrame{
         radioButtonAluno.setToolTipText("Aluno");
 
         buttonGroup.add(radioButtonInstituicao);
-        radioButtonInstituicao.setText("Instituição");
-        radioButtonInstituicao.setToolTipText("Instituição");
+        radioButtonInstituicao.setText("InstituiÃ§Ã£o");
+        radioButtonInstituicao.setToolTipText("InstituiÃ§Ã£o");
 
         buttonGroup.add(radioButtonProfessor);
         radioButtonProfessor.setText("Professor");
         radioButtonProfessor.setToolTipText("Professor");
 
         buttonGroup.add(radioButtonAdm);
-        radioButtonAdm.setText("Administração");
-        radioButtonAdm.setToolTipText("Administração");
+        radioButtonAdm.setText("AdministraÃ§Ã£o");
+        radioButtonAdm.setToolTipText("AdministraÃ§Ã£o");
         
 
         GroupLayout layout = new GroupLayout(getContentPane());
@@ -175,14 +175,14 @@ public class Login_view extends JFrame{
 					new Professor_view(professor);
 				}
 				break;
-			case "Administração":
+			case "AdministraÃ§Ã£o":
 				Administrador adm = Administrador.Login(login, senha);
 				if(adm != null) {
 					this.setVisible(false);
 					new Adm_view(adm);
 				}
 				break;
-			case "Instituição":
+			case "InstituiÃ§Ã£o":
 				Instituicao inst = Instituicao.Login(login, senha);
 				if(inst != null) {
 					this.setVisible(false);

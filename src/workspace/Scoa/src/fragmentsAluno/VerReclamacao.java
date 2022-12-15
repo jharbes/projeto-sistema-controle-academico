@@ -15,12 +15,12 @@ public class VerReclamacao extends javax.swing.JInternalFrame {
 
         jLabel1 = new javax.swing.JLabel();
 
-        jLabel1.setText("Tela para ver as reclamaÁıes que o aluno j· fez");
+        jLabel1.setText("Tela para ver as reclama√ß√µes que o aluno j√° fez");
 
         setPreferredSize(new java.awt.Dimension(1000, 538));
         setBackground(Color.WHITE);
         
-        // tirando os padrıes de efeito que j· vem no JInternalFrame
+        // tirando os padr√µes de efeito que j√° v√™m no JInternalFrame
         ((javax.swing.plaf.basic.BasicInternalFrameUI) this.getUI()).setNorthPane(null);
         setBorder(null);
         

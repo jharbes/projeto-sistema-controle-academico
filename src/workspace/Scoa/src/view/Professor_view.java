@@ -88,9 +88,9 @@ public class Professor_view extends JFrame{
 
         // Construindo o menu Home
         menuHome.setText("Home");
-        minhasInfos.setText("Minhas informaÁıes");
+        minhasInfos.setText("Minhas informa√ß√µes");
         menuHome.add(minhasInfos);
-        addConteudoProg.setText("Adicionar conte˙do program·tico");
+        addConteudoProg.setText("Adicionar conte√∫do program√°tico");
         menuHome.add(addConteudoProg);
         
         menuPrincipal.add(menuHome);
@@ -108,18 +108,18 @@ public class Professor_view extends JFrame{
         
         // Construindo menu Aluno
         menuAluno.setText("Aluno");
-        lancarResultadoFinal.setText("LanÁar resultado final");
+        lancarResultadoFinal.setText("Lan√ßar resultado final");
         menuAluno.add(lancarResultadoFinal);
-        fazerAnaliseCurricular.setText("Fazer an·lise curricular");
+        fazerAnaliseCurricular.setText("Fazer an√°lise curricular");
         menuAluno.add(fazerAnaliseCurricular);
         
         menuPrincipal.add(menuAluno);
         
-        // Construindo menu AvaliaÁ„o
-        menuAvaliacao.setText("AvaliaÁ„o");
-        abrirAvaliacao.setText("Abrir avaliaÁ„o");
+        // Construindo menu Avalia√ß√£o
+        menuAvaliacao.setText("Avalia√ß√£o");
+        abrirAvaliacao.setText("Abrir avalia√ß√£o");
         menuAvaliacao.add(abrirAvaliacao);
-        lancarNotas.setText("LanÁar notas");
+        lancarNotas.setText("Lan√ßar notas");
         menuAvaliacao.add(lancarNotas);
         
         menuPrincipal.add(menuAvaliacao);
@@ -127,7 +127,7 @@ public class Professor_view extends JFrame{
         // Colocando o menu principal no MenuBar
         setJMenuBar(menuPrincipal);
         
-        // Instanciando a tela default que j· abre na abertura inicial da tela
+        // Instanciando a tela default que j√° abre na abertura inicial da tela
         telaMinhasInfos = new MinhasInfos();
         mainContent.add(telaMinhasInfos);
         telaMinhasInfos.show();

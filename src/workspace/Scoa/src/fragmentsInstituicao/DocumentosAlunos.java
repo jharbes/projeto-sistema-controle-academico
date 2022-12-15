@@ -15,12 +15,12 @@ public class DocumentosAlunos extends javax.swing.JInternalFrame {
 
         jLabel1 = new javax.swing.JLabel();
 
-        jLabel1.setText("Tela para mostrar as pendências dos documentos dos alunos");
+        jLabel1.setText("Tela para mostrar as pendÃªncias dos documentos dos alunos");
 
         setPreferredSize(new java.awt.Dimension(1000, 538));
         setBackground(Color.WHITE);
         
-        // tirando os padrões de efeito que já vem no JInternalFrame
+        // tirando os padrÃµes de efeito que jÃ¡ vÃªm no JInternalFrame
         ((javax.swing.plaf.basic.BasicInternalFrameUI) this.getUI()).setNorthPane(null);
         setBorder(null);
         

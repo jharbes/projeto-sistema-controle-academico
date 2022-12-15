@@ -86,11 +86,11 @@ public class Aluno_view extends JFrame{
 
         // Construindo o menu Home
         menuHome.setText("Home");
-        infoPessoais.setText("InformaÁıes pessoais");
+        infoPessoais.setText("Informa√ß√µes pessoais");
         menuHome.add(infoPessoais);
-        historico.setText("HistÛrico");
+        historico.setText("Hist√≥rico");
         menuHome.add(historico);
-        analiseCurricular.setText("An·lise Curricular");
+        analiseCurricular.setText("An√°lise Curricular");
         menuHome.add(analiseCurricular);
         docsRequeridos.setText("Docs. requeridos");
         menuHome.add(docsRequeridos);
@@ -99,13 +99,13 @@ public class Aluno_view extends JFrame{
         // Construindo o menu disciplinas
         menuDisciplinas.setText("Disciplinas");
         
-        fazerInscricao.setText("Fazer inscriÁ„o");
+        fazerInscricao.setText("Fazer inscri√ß√£o");
         menuDisciplinas.add(fazerInscricao);
-        verInscricao.setText("Ver inscriÁ„o");
+        verInscricao.setText("Ver inscri√ß√£o");
         menuDisciplinas.add(verInscricao);
         
         
-        // Busca as disciplinas que este usu·rio est· matriculado no perÌodo
+        // Busca as disciplinas que este usu√°rio est√° matriculado no per√≠odo
         ArrayList<String> disciplinas = aluno.buscarDisciplinas(aluno.getId_aluno());
         for(String disciplina: disciplinas) {
         	
@@ -127,26 +127,26 @@ public class Aluno_view extends JFrame{
         menuPrincipal.add(menuDisciplinas);
         
         
-        // Construindo o menu Sugest„o 
-        menuSugestao.setText("Sugest„o");
-        fazerSugestao.setText("Fazer sugest„o");
+        // Construindo o menu Sugest√£o
+        menuSugestao.setText("Sugest√£o");
+        fazerSugestao.setText("Fazer sugest√£o");
         menuSugestao.add(fazerSugestao);
-        verSugestao.setText("Ver sugestıes");
+        verSugestao.setText("Ver sugest√µes");
         menuSugestao.add(verSugestao);
         menuPrincipal.add(menuSugestao);
         
-        // Construindo o menu reclamaÁ„o
-        menuReclamacao.setText("ReclamaÁ„o");
-        fazerReclamacao.setText("Fazer reclamaÁ„o");
+        // Construindo o menu reclama√ß√£o
+        menuReclamacao.setText("Reclama√ß√£o");
+        fazerReclamacao.setText("Fazer reclama√ß√£o");
         menuReclamacao.add(fazerReclamacao);
-        verReclamacao.setText("Ver reclamaÁıes");
+        verReclamacao.setText("Ver reclama√ß√µes");
         menuReclamacao.add(verReclamacao);
         menuPrincipal.add(menuReclamacao);
         
         // Colocando o menu principal no MenuBar
         setJMenuBar(menuPrincipal);
         
-        // Instanciando a tela default que j· abre na abertura inicial da tela
+        // Instanciando a tela default que j√° abre na abertura inicial da tela
         telaInfoPessoais = new InformacoesPessoais();
         mainContent.add(telaInfoPessoais);
         telaInfoPessoais.show();
