@@ -25,6 +25,18 @@ public class Professor extends Funcionario{
 	public Professor() {
 		super();
 	}
+	
+	public static String CadastrarProfessor(String nome, String genero, String telefone, String email, int idade, String rg, String cpf, String login, String senha, Double salario, String rua, String cep, String numero, String bairro, String cidade, String estado, int id_istituicao) {
+		Professor professor = new Professor(0, login, senha, 
+											new Funcionario("Professor", salario, 
+											new Pessoa(nome, genero, idade, rg, cpf, telefone, email, 
+											new Endereco(0, rua, idade, cep, bairro, cidade, estado))));
+		
+		if(ProfessorDAO.Cadastrar(professor, id_istituicao))
+			return professor.getFuncionario().getPessoa().getNome();
+		else 
+			return "";
+	}
 
 	public static Professor Login(String login, String senha) {
 		Professor professor = null;
@@ -70,12 +82,12 @@ public class Professor extends Funcionario{
 							funcionario);
 				}
 			} catch (SQLException e) {
-				JOptionPane.showMessageDialog(null, "Falha na conexão com o banco de dados. \nDetalhes: "+ e.getMessage());
+				JOptionPane.showMessageDialog(null, "Falha na conexï¿½o com o banco de dados. \nDetalhes: "+ e.getMessage());
 			}
 			
 			return professor;
 		}else {
-			JOptionPane.showMessageDialog(null, "Login ou senha inválidos.");
+			JOptionPane.showMessageDialog(null, "Login ou senha invï¿½lidos.");
 			return professor;
 		}
 	}

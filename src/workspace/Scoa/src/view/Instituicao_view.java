@@ -61,35 +61,35 @@ public class Instituicao_view extends JFrame{
 	private Instituicao inst;
 
 	// Atributos relacionados as telas
-	private MinhasInfos telaMinhasInfos = new MinhasInfos();
-	private CadastrarProduto telaCadastrarProduto = new CadastrarProduto();
-	private MostrarProdutos telaMostrarProdutos = new MostrarProdutos();
-	private EmprestarProduto telaEmprestarProduto = new EmprestarProduto();
+	private MinhasInfos telaMinhasInfos;
+	private CadastrarProduto telaCadastrarProduto;
+	private MostrarProdutos telaMostrarProdutos;
+	private EmprestarProduto telaEmprestarProduto;
 	
-	private CadastrarCurso telaCadastrarCurso = new CadastrarCurso();
-	private MostrarCursos telaMostrarCursos = new MostrarCursos();
-	private CadastrarDisciplina telaCadastrarDisciplina = new CadastrarDisciplina();
-	private MostrarDisciplinas telaMostrarDisciplinas = new MostrarDisciplinas();
-	private AbrirSalaParaDisciplina telaAbrirSalaParaDisciplina = new AbrirSalaParaDisciplina();
-	private MostrarSalas telaMostrarSalas = new MostrarSalas();
+	private CadastrarCurso telaCadastrarCurso;
+	private MostrarCursos telaMostrarCursos;
+	private CadastrarDisciplina telaCadastrarDisciplina;
+	private MostrarDisciplinas telaMostrarDisciplinas;
+	private AbrirSalaParaDisciplina telaAbrirSalaParaDisciplina;
+	private MostrarSalas telaMostrarSalas;
 	
-	private CadastrarTurma telaCadastrarTurma = new CadastrarTurma();
-	private MostrarTurmas telaMostrarTurmas = new MostrarTurmas();
+	private CadastrarTurma telaCadastrarTurma;
+	private MostrarTurmas telaMostrarTurmas;
 	
-	private CadastrarAluno telaCadastrarAluno = new CadastrarAluno();
-	private MostrarAlunos telaMostrarAlunos = new MostrarAlunos();
-	private DocumentosAlunos telaDocumentosAlunos = new DocumentosAlunos();
+	private CadastrarAluno telaCadastrarAluno;
+	private MostrarAlunos telaMostrarAlunos;
+	private DocumentosAlunos telaDocumentosAlunos;
 	
-	private CadastrarProfessor telaCadastrarProfessor = new CadastrarProfessor();
-	private MostrarProfessores telaMostrarProfessores = new MostrarProfessores();
-	private AlocarSalaAoProfessor telaAlocarSalaAoProfessor = new AlocarSalaAoProfessor();
+	private CadastrarProfessor telaCadastrarProfessor;
+	private MostrarProfessores telaMostrarProfessores;
+	private AlocarSalaAoProfessor telaAlocarSalaAoProfessor;
 	
-	private FazerCadastro telaFazerCadastro = new FazerCadastro();
-	private CadastrarObra telaCadastrarObra = new CadastrarObra();
-	private MostrarObras telaMostrarObras = new MostrarObras();
-	private MostrarPendencias telaMostrarPendencias = new MostrarPendencias();
-	private EmprestarObra telaEmprestarObra = new EmprestarObra();
-	private MostrarEmprestimos telaMostrarEmprestimos = new MostrarEmprestimos();
+	private FazerCadastro telaFazerCadastro;
+	private CadastrarObra telaCadastrarObra;
+	private MostrarObras telaMostrarObras;
+	private MostrarPendencias telaMostrarPendencias;
+	private EmprestarObra telaEmprestarObra;
+	private MostrarEmprestimos telaMostrarEmprestimos;
 	
 	public Instituicao_view(Instituicao inst) {
 		this.inst = inst;
@@ -99,6 +99,38 @@ public class Instituicao_view extends JFrame{
 
 	private void build() {
 		
+		// Instânciando as telas
+		telaMinhasInfos = new MinhasInfos();
+		telaCadastrarProduto = new CadastrarProduto();
+		telaMostrarProdutos = new MostrarProdutos();
+		telaEmprestarProduto = new EmprestarProduto();
+		
+		telaCadastrarCurso = new CadastrarCurso();
+		telaMostrarCursos = new MostrarCursos();
+		telaCadastrarDisciplina = new CadastrarDisciplina();
+		telaMostrarDisciplinas = new MostrarDisciplinas();
+		telaAbrirSalaParaDisciplina = new AbrirSalaParaDisciplina();
+		telaMostrarSalas = new MostrarSalas();
+		
+		telaCadastrarTurma = new CadastrarTurma();
+		telaMostrarTurmas = new MostrarTurmas();
+		
+		telaCadastrarAluno = new CadastrarAluno();
+		telaMostrarAlunos = new MostrarAlunos();
+		telaDocumentosAlunos = new DocumentosAlunos();
+		
+		telaCadastrarProfessor = new CadastrarProfessor(this.inst);
+		telaMostrarProfessores = new MostrarProfessores();
+		telaAlocarSalaAoProfessor = new AlocarSalaAoProfessor();
+		
+		telaFazerCadastro = new FazerCadastro();
+		telaCadastrarObra = new CadastrarObra();
+		telaMostrarObras = new MostrarObras();
+		telaMostrarPendencias = new MostrarPendencias();
+		telaEmprestarObra = new EmprestarObra();
+		telaMostrarEmprestimos = new MostrarEmprestimos();
+		
+		// Instanciando componentes de tela
 		menuPrincipal = new javax.swing.JMenuBar();
 		
         menuHome = new javax.swing.JMenu();

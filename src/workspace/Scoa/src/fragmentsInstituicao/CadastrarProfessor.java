@@ -3,8 +3,13 @@ package fragmentsInstituicao;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
-
+import java.util.Enumeration;
+import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
+
+import model.Instituicao;
+import model.Professor;
 
 @SuppressWarnings("serial")
 public class CadastrarProfessor extends javax.swing.JInternalFrame {
@@ -65,15 +70,20 @@ public class CadastrarProfessor extends javax.swing.JInternalFrame {
 	
 	private javax.swing.JButton btnCadastrar;
 	
+	private Instituicao inst = new Instituicao();
+	
 	
 	private Container contentPane = getContentPane();
 	
-	public CadastrarProfessor() {
+	public CadastrarProfessor(Instituicao inst) {
+		// Setando a instituição que está cadastrando
+		this.inst = inst;
+		
         initComponents();
         events();
     }
 	
-	private void initComponents() {		
+	private void initComponents() {
 		
 		// Definindo o título
 		lblTitleCadastro = new javax.swing.JLabel();
@@ -185,8 +195,8 @@ public class CadastrarProfessor extends javax.swing.JInternalFrame {
         
         
         lblCep = new javax.swing.JLabel();
-        lblCep.setText("CEP (Somente dígitos):");
-        lblCep.setBounds(632, 305, 140, 16);
+        lblCep.setText("CEP (Formato XXXXX-XXX):");
+        lblCep.setBounds(632, 305, 160, 16);
         
         inputCep = new javax.swing.JFormattedTextField();
         inputCep.setBounds(632, 327, 130, 22);
@@ -282,6 +292,40 @@ public class CadastrarProfessor extends javax.swing.JInternalFrame {
 	}
 	
 	private void cadastrar(ActionEvent e) {
-		JOptionPane.showMessageDialog(null, "foi");
+		String nome;
+		
+		nome = Professor.CadastrarProfessor(
+				this.inputNome.getText(),
+				CadastrarProfessor.getTextSelected(this.btnGroupGenero),
+				this.inputTelefone.getText(),
+				this.inputEmail.getText(),
+				Integer.parseInt(this.inputIdade.getText()),
+				this.inputRg.getText(),
+				this.inputCpf.getText(),
+				this.inputLogin.getText(),
+				this.inputSenha.getText(),
+				Double.parseDouble(this.inputSalario.getText()),
+				this.inputRua.getText(),
+				this.inputCep.getText(),
+				this.inputNumero.getText(),
+				this.inputBairro.getText(),
+				this.inputCidade.getText(),
+				this.inputEstado.getText(),
+				inst.getId_instituicao());
+		
+		if(!nome.equals(""))
+			JOptionPane.showMessageDialog(null, ""+nome+" foi cadastrado com sucesso.");
+		else
+			JOptionPane.showMessageDialog(null, "Algo deu errado ao fazer o cadastro de " + nome);
+	}
+	
+	public static String getTextSelected(ButtonGroup group) {
+		 for (@SuppressWarnings("rawtypes")
+			Enumeration e = group.getElements(); e.hasMoreElements(); ){
+	    	
+	        JRadioButton rbtn = (JRadioButton) e.nextElement();
+	        if (rbtn.getModel() == group.getSelection()) return rbtn.getText();
+	    }
+	    return null;
 	}
 }

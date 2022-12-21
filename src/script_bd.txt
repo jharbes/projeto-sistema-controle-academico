@@ -41,7 +41,7 @@ CREATE TABLE Endereco (
     id_endereco int PRIMARY KEY UNIQUE NOT NULL AUTO_INCREMENT,
     rua varchar(50),
     numero int,
-    cep int,
+    cep varchar(10),
     bairro varchar(50),
     cidade varchar(50),
     estado varchar(50)

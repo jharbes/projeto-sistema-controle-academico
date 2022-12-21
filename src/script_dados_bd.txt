@@ -1,12 +1,12 @@
 /* Dados da tabela Endereço */
 
-INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('1', 'Rua Parima', '129', '21250430', 'Parada de Lucas', 'Rio de Janeiro', 'Rio de Janeiro');
-INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('2', 'Rua Iranduba', '314', '21250380', 'Cordovil', 'Rio de Janeiro', 'Rio de Janeiro');
-INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('3', 'Rua Porto Carrero', '341', '21250260', 'Cordovil', 'Rio de Janeiro', 'Rio de Janeiro');
-INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('4', 'R. Suruí', '915', '21215575', 'Brás de Pina', 'Rio de Janeiro', 'Rio de Janeiro');
-INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('5', 'R. ibicuí', '224', '21215240', 'Penha Circular', 'Rio de Janeiro', 'Rio de Janeiro');
-INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('6', 'R. Samin', '250', '21235210', 'Irajá', 'Rio de Janeiro', 'Rio de Janeiro');
-INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('7', 'Praça Gen. Tibúrcio', '80', '22290270', 'Urca', 'Rio de Janeiro', 'Rio de Janeiro');
+INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('1', 'Rua Parima', '129', '21250-430', 'Parada de Lucas', 'Rio de Janeiro', 'Rio de Janeiro');
+INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('2', 'Rua Iranduba', '314', '21250-380', 'Cordovil', 'Rio de Janeiro', 'Rio de Janeiro');
+INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('3', 'Rua Porto Carrero', '341', '21250-260', 'Cordovil', 'Rio de Janeiro', 'Rio de Janeiro');
+INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('4', 'R. Suruí', '915', '21215-575', 'Brás de Pina', 'Rio de Janeiro', 'Rio de Janeiro');
+INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('5', 'R. ibicuí', '224', '21215-240', 'Penha Circular', 'Rio de Janeiro', 'Rio de Janeiro');
+INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('6', 'R. Samin', '250', '21235-210', 'Irajá', 'Rio de Janeiro', 'Rio de Janeiro');
+INSERT INTO `scoa`.`endereco` (`id_endereco`, `rua`, `numero`, `cep`, `bairro`, `cidade`, `estado`) VALUES ('7', 'Praça Gen. Tibúrcio', '80', '22290-270', 'Urca', 'Rio de Janeiro', 'Rio de Janeiro');
 
 
 /* Dados da tabela Instituição */

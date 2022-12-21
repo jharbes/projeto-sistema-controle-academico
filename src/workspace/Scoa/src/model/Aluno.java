@@ -105,7 +105,7 @@ public class Aluno {
 		this.pessoa = pessoa;
 	}
 	
-	/* MÉTODOS PARA SEREM IMPLEMENTADOS
+	/* Mï¿½TODOS PARA SEREM IMPLEMENTADOS
 	
 	public void verConteudoProgramatico()
 	public void verPautaAula()
@@ -153,13 +153,13 @@ public class Aluno {
 											pessoa);
 				}
 			} catch (SQLException e) {
-				JOptionPane.showMessageDialog(null, "Falha na conexão com o banco de dados. \nDetalhes: "+ e.getMessage());
+				JOptionPane.showMessageDialog(null, "Falha na conexï¿½o com o banco de dados. \nDetalhes: "+ e.getMessage());
 			}
 			
 			
 			return aluno;
 		}else {
-			JOptionPane.showMessageDialog(null, "Login ou senha inválidos.");
+			JOptionPane.showMessageDialog(null, "Login ou senha invï¿½lidos.");
 			return aluno;
 		}
 	}
