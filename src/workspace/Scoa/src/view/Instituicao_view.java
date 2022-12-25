@@ -115,7 +115,7 @@ public class Instituicao_view extends JFrame{
 		telaCadastrarTurma = new CadastrarTurma();
 		telaMostrarTurmas = new MostrarTurmas();
 		
-		telaCadastrarAluno = new CadastrarAluno();
+		telaCadastrarAluno = new CadastrarAluno(this.inst);
 		telaMostrarAlunos = new MostrarAlunos();
 		telaDocumentosAlunos = new DocumentosAlunos();
 		

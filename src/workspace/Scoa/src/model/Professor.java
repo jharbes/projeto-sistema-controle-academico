@@ -82,12 +82,12 @@ public class Professor extends Funcionario{
 							funcionario);
 				}
 			} catch (SQLException e) {
-				JOptionPane.showMessageDialog(null, "Falha na conex�o com o banco de dados. \nDetalhes: "+ e.getMessage());
+				JOptionPane.showMessageDialog(null, "Falha na conexão com o banco de dados. \nDetalhes: "+ e.getMessage());
 			}
 			
 			return professor;
 		}else {
-			JOptionPane.showMessageDialog(null, "Login ou senha inv�lidos.");
+			JOptionPane.showMessageDialog(null, "Login ou senha inválidos.");
 			return professor;
 		}
 	}
@@ -119,7 +119,7 @@ public class Professor extends Funcionario{
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-
+	
 	public void setFuncionario(Funcionario funcionario) {
 		this.funcionario = funcionario;
 	}

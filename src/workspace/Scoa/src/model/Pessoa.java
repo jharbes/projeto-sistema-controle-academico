@@ -11,8 +11,9 @@ public class Pessoa {
 	private String telefone;
 	private String email;
 	private Endereco endereco;
-	
-	public Pessoa(String nome, String genero, int idade, String rg, String cpf, String telefone, String email, Endereco endereco) {
+
+	public Pessoa(String nome, String genero, int idade, String rg, String cpf, String telefone, String email,
+			Endereco endereco) {
 		super();
 		this.nome = nome;
 		this.genero = genero;
@@ -20,7 +21,7 @@ public class Pessoa {
 		this.rg = rg;
 		this.cpf = cpf;
 		this.telefone = telefone;
-		this.email = email;	
+		this.email = email;
 		this.endereco = endereco;
 	}
 
@@ -91,23 +92,22 @@ public class Pessoa {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-	
-	
+
 	public boolean createPessoa() {
 		return false;
 	}
-	
+
 	public ArrayList<Pessoa> readPessoa() {
 		ArrayList<Pessoa> retorno = new ArrayList<Pessoa>();
 		return retorno;
 	}
-	
+
 	public boolean updatePessoa() {
 		return false;
 	}
-	
+
 	public boolean deletePessoa() {
 		return false;
 	}
-	
+
 }
