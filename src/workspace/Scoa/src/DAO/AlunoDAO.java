@@ -44,7 +44,6 @@ public class AlunoDAO {
 				"'" + aluno.getPessoa().getEndereco().getEstado() + "')";
 
 		try {
-
 			last_insert_id = stmt.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
 			if (last_insert_id == 1) {
 
@@ -67,21 +66,15 @@ public class AlunoDAO {
 
 						generatedKeys = stmt.getGeneratedKeys();
 						if (generatedKeys.next()) {
-
-							query = "insert into funcionario (cargo, salario, id_pessoa) "
-									+ "values ('Aluno'," +
-									"'" + aluno.getTurma() + "'," +
-									"'" + generatedKeys.getInt(last_insert_id) + "')";
-
-							last_insert_id = stmt.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
-							if (last_insert_id == 1) {
-
 								generatedKeys = stmt.getGeneratedKeys();
 								if (generatedKeys.next()) {
 
-									query = "insert into aluno (login, senha, id_aluno) "
-											+ "values ('" + aluno.getLogin() + "'," +
+									query = "insert into aluno (matricula, login, senha, cr, id_turma, id_pessoa) "
+											+ "values ('" + aluno.getMatricula() + "'," +
+											"'" + aluno.getLogin() + "'," +
 											"'" + aluno.getSenha() + "'," +
+											"'" + aluno.getCr() + "'," +
+											"1," +
 											"'" + generatedKeys.getInt(last_insert_id) + "')";
 
 									last_insert_id = stmt.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
@@ -90,10 +83,7 @@ public class AlunoDAO {
 									else
 										throw new SQLException();
 								}
-
-							} else
-								throw new SQLException();
-						}
+							}
 					} else
 						throw new SQLException();
 				}

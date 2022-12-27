@@ -1,15 +1,16 @@
 package model;
 
-import DAO.AlunoDAO;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-public class Aluno {
+import DAO.AlunoDAO;
+
+public class Aluno extends Pessoa {
 	private int id_aluno;
-	private String matricula;
+	private int matricula;
 	private String turno;
 	private String login;
 	private String senha;
@@ -18,9 +19,11 @@ public class Aluno {
 	private int cr;
 	private Pessoa pessoa;
 	
-	public Aluno(int id_aluno, String matricula, String turno, String turma, String nome_curso, int cr, Pessoa pessoa) {
+	public Aluno (int id_aluno, String login, String senha, int matricula, String turno, String turma, String nome_curso, int cr, Pessoa pessoa) {
 		super();
 		this.id_aluno = id_aluno;
+		this.login = login;
+		this.senha = senha;
 		this.matricula = matricula;
 		this.turno = turno;
 		this.turma = turma;
@@ -30,14 +33,26 @@ public class Aluno {
 	}
 
 	public Aluno() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 
+	public static String CadastrarAluno(String nome,  String genero, String telefone, String email, int idade, String rg, String cpf, String login, String senha, String turma, int matricula, String turno, String nome_curso, int cr,  String rua, String cep, int numero, String bairro, String cidade, String estado, int id_istituicao) {
+		Aluno aluno = new Aluno(0, login, senha, matricula, turno, turma, nome_curso, cr,
+		new Pessoa(nome, genero, idade, rg, cpf, telefone, email,
+		new Endereco(0, rua, numero, cep, bairro, cidade, estado)));
+		
+		if(AlunoDAO.Cadastrar(aluno, id_istituicao))
+			return aluno.getPessoa().getNome();
+		else
+			return "";
+	}
+	
 	public int getId_aluno() {
 		return id_aluno;
 	}
 
-	public String getMatricula() {
+	public int getMatricula() {
 		return matricula;
 	}
 
@@ -73,7 +88,7 @@ public class Aluno {
 		this.id_aluno = id_aluno;
 	}
 
-	public void setMatricula(String matricula) {
+	public void setMatricula(int matricula) {
 		this.matricula = matricula;
 	}
 
@@ -145,21 +160,23 @@ public class Aluno {
 											endereco);
 				
 					aluno = new Aluno(		rs.getInt("id_aluno"), 
-											rs.getString("matricula"),
-											rs.getString("turno"),
+											rs.getString("login"),
+											rs.getString("senha"),
+											rs.getInt("matricula"),
+											rs.getString("turno"),	
 											rs.getString("turma"),
-											rs.getString("curso"),
+											rs.getString("nome_curso"),
 											rs.getInt("cr"),
 											pessoa);
 				}
 			} catch (SQLException e) {
-				JOptionPane.showMessageDialog(null, "Falha na conex�o com o banco de dados. \nDetalhes: "+ e.getMessage());
+				JOptionPane.showMessageDialog(null, "Falha na conexão com o banco de dados. \nDetalhes: "+ e.getMessage());
 			}
 			
 			
 			return aluno;
 		}else {
-			JOptionPane.showMessageDialog(null, "Login ou senha inv�lidos.");
+			JOptionPane.showMessageDialog(null, "Login ou senha inválidos.");
 			return aluno;
 		}
 	}

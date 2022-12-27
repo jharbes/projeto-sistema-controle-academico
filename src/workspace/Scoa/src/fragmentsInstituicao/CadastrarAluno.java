@@ -68,6 +68,15 @@ public class CadastrarAluno extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblEstado;
     private javax.swing.JFormattedTextField inputEstado;
 
+    private javax.swing.JLabel lblMatricula;
+    private javax.swing.JFormattedTextField inputMatricula;
+
+    private javax.swing.JLabel lblTurno;
+    private javax.swing.JFormattedTextField inputTurno;
+
+    private javax.swing.JLabel lblNome_curso;
+    private javax.swing.JFormattedTextField inputNome_curso;
+
     private javax.swing.JButton btnCadastrar;
 
     private Instituicao inst = new Instituicao();
@@ -175,47 +184,69 @@ public class CadastrarAluno extends javax.swing.JInternalFrame {
         inputTurma = new javax.swing.JFormattedTextField();
         inputTurma.setBounds(817, 218, 142, 22);
 
+        lblMatricula = new javax.swing.JLabel();
+        lblMatricula.setText("Matricula:");
+        lblMatricula.setBounds(25, 255, 130, 16);
+
+        inputMatricula = new javax.swing.JFormattedTextField();
+        inputMatricula.setBounds(25, 277, 140, 22);
+
+        lblTurno = new javax.swing.JLabel();
+        lblTurno.setText("Turno:");
+        lblTurno.setBounds(185, 255, 100, 16);
+
+        inputTurno = new javax.swing.JFormattedTextField();
+        inputTurno.setBounds(185, 277, 130,22);
+
+        lblNome_curso = new javax.swing.JLabel();
+        lblNome_curso.setText("Nome do Curso:");
+        lblNome_curso.setBounds(347, 255, 180, 16);
+
+        inputNome_curso = new javax.swing.JFormattedTextField();
+        inputNome_curso.setBounds(347, 277, 180,22);
+
+
         lblRua = new javax.swing.JLabel();
         lblRua.setText("Rua:");
-        lblRua.setBounds(25, 305, 40, 16);
+        lblRua.setBounds(25, 312, 40, 16);
 
         inputRua = new javax.swing.JFormattedTextField();
-        inputRua.setBounds(25, 327, 557, 22);
+        inputRua.setBounds(25, 334, 557, 22);
 
         lblCep = new javax.swing.JLabel();
         lblCep.setText("CEP Formato XXXXX-XXX):");
-        lblCep.setBounds(632, 305, 140, 16);
+        lblCep.setBounds(632, 312, 155, 16);
 
         inputCep = new javax.swing.JFormattedTextField();
-        inputCep.setBounds(632, 327, 130, 22);
+        inputCep.setBounds(632, 334, 130, 22);
 
         lblNumero = new javax.swing.JLabel();
         lblNumero.setText("Número:");
-        lblNumero.setBounds(817, 305, 55, 16);
+        lblNumero.setBounds(817, 312, 55, 16);
 
         inputNumero = new javax.swing.JFormattedTextField();
-        inputNumero.setBounds(817, 327, 142, 22);
+        inputNumero.setBounds(817, 334, 142, 22);
 
         lblBairro = new javax.swing.JLabel();
         lblBairro.setText("Bairro:");
-        lblBairro.setBounds(25, 367, 50, 16);
+        lblBairro.setBounds(25, 369, 50, 16);
 
         inputBairro = new javax.swing.JFormattedTextField();
-        inputBairro.setBounds(25, 389, 243, 22);
+        inputBairro.setBounds(25, 391, 243, 22);
 
         lblCidade = new javax.swing.JLabel();
         lblCidade.setText("Cidade:");
-        lblCidade.setBounds(335, 367, 55, 16);
+        lblCidade.setBounds(335, 369, 55, 16);
 
         inputCidade = new javax.swing.JFormattedTextField();
-        inputCidade.setBounds(335, 389, 247, 22);
+        inputCidade.setBounds(335, 391, 247, 22);
 
         lblEstado = new javax.swing.JLabel();
         lblEstado.setText("Estado:");
-        lblEstado.setBounds(632, 367, 50, 16);
+        lblEstado.setBounds(632, 369, 50, 16);
 
         inputEstado = new javax.swing.JFormattedTextField();
-        inputEstado.setBounds(632, 389, 325, 22);
+        inputEstado.setBounds(632, 391, 325, 22);
 
         btnCadastrar = new javax.swing.JButton();
         btnCadastrar.setText("Cadastrar");
@@ -252,6 +283,12 @@ public class CadastrarAluno extends javax.swing.JInternalFrame {
         contentPane.add(inputSenha);
         contentPane.add(lblTurma);
         contentPane.add(inputTurma);
+        contentPane.add(lblMatricula);
+        contentPane.add(inputMatricula);
+        contentPane.add(lblTurno);
+        contentPane.add(inputTurno);
+        contentPane.add(lblNome_curso);
+        contentPane.add(inputNome_curso);
         contentPane.add(lblRua);
         contentPane.add(inputRua);
         contentPane.add(lblCep);
@@ -264,6 +301,7 @@ public class CadastrarAluno extends javax.swing.JInternalFrame {
         contentPane.add(inputCidade);
         contentPane.add(lblEstado);
         contentPane.add(inputEstado);
+
         contentPane.add(btnCadastrar);
 
         pack();
@@ -286,14 +324,19 @@ public class CadastrarAluno extends javax.swing.JInternalFrame {
                 this.inputCpf.getText(),
                 this.inputLogin.getText(),
                 this.inputSenha.getText(),
-                Double.parseDouble(this.inputTurma.getText()),
+                this.inputTurma.getText(),
+                Integer.parseInt(this.inputMatricula.getText()),
+                this.inputTurno.getText(),
+                this.inputNome_curso.getText(),
+                0,
                 this.inputRua.getText(),
                 this.inputCep.getText(),
-                this.inputNumero.getText(),
+                Integer.parseInt(this.inputNumero.getText()),
                 this.inputBairro.getText(),
                 this.inputCidade.getText(),
                 this.inputEstado.getText(),
                 inst.getId_instituicao());
+
 
         if (!nome.equals(""))
             JOptionPane.showMessageDialog(null, "" + nome + " foi cadastrado com sucesso.");
