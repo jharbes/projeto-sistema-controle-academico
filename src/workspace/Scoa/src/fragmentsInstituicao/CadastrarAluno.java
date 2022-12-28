@@ -214,8 +214,8 @@ public class CadastrarAluno extends javax.swing.JInternalFrame {
         inputRua.setBounds(25, 334, 557, 22);
 
         lblCep = new javax.swing.JLabel();
-        lblCep.setText("CEP Formato XXXXX-XXX):");
-        lblCep.setBounds(632, 312, 155, 16);
+        lblCep.setText("CEP (Formato XXXXX-XXX):");
+        lblCep.setBounds(632, 312, 165, 16);
 
         inputCep = new javax.swing.JFormattedTextField();
         inputCep.setBounds(632, 334, 130, 22);
