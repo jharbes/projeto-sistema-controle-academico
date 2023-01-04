@@ -82,7 +82,7 @@ public class Professor extends Funcionario{
 							funcionario);
 				}
 			} catch (SQLException e) {
-				JOptionPane.showMessageDialog(null, "Falha na conexão com o banco de dados. \nDetalhes: "+ e.getMessage());
+				JOptionPane.showMessageDialog(null, "Falha na recuperação dos dados do professor. \nDetalhes: "+ e.getMessage());
 			}
 			
 			return professor;

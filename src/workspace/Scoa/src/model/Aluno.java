@@ -135,7 +135,6 @@ public class Aluno extends Pessoa {
 	public static Aluno Login(String login, String senha) {
 		Aluno aluno = null;
 		if(AlunoDAO.Logar(login, senha)) {
-			
 			ResultSet rs = AlunoDAO.buscaBuscarInformacoesAluno(login, senha);
 			Pessoa pessoa;
 			Endereco endereco;
@@ -158,21 +157,20 @@ public class Aluno extends Pessoa {
 											rs.getString("telefone"),
 											rs.getString("email"),
 											endereco);
-				
+					
 					aluno = new Aluno(		rs.getInt("id_aluno"), 
 											rs.getString("login"),
 											rs.getString("senha"),
 											rs.getInt("matricula"),
 											rs.getString("turno"),	
 											rs.getString("turma"),
-											rs.getString("nome_curso"),
+											rs.getString("curso"),
 											rs.getInt("cr"),
 											pessoa);
 				}
 			} catch (SQLException e) {
-				JOptionPane.showMessageDialog(null, "Falha na conexão com o banco de dados. \nDetalhes: "+ e.getMessage());
+				JOptionPane.showMessageDialog(null, "Falha na recuperação dos dados do aluno. \nDetalhes: "+ e.getMessage());
 			}
-			
 			
 			return aluno;
 		}else {

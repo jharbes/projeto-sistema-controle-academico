@@ -55,7 +55,7 @@ public class Administrador {
 		this.senha = senha;
 	}
 	
-	/* MÉTODOS PARA SEREM IMPLEMENTADOS
+	/* Mï¿½TODOS PARA SEREM IMPLEMENTADOS
 	
 	public void editarAdm()
 	public void cadastrarInstituicao()
@@ -75,12 +75,12 @@ public class Administrador {
 					adm = new Administrador(rs.getInt("id_adm"), rs.getString("nome"), rs.getString("login"), rs.getString("senha"));
 				}
 			} catch (SQLException e) {
-				JOptionPane.showMessageDialog(null, "Falha na conexão com o banco de dados. \nDetalhes: "+ e.getMessage());
+				JOptionPane.showMessageDialog(null, "Falha na recuperaÃ§Ã£o dos dados do administrador. \nDetalhes: "+ e.getMessage());
 			}
 			
 			return adm;
 		}else {
-			JOptionPane.showMessageDialog(null, "Login ou senha inválidos.");
+			JOptionPane.showMessageDialog(null, "Login ou senha invï¿½lidos.");
 			return adm;
 		}
 	}

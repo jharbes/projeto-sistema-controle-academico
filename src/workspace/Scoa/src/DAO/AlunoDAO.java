@@ -15,8 +15,7 @@ public class AlunoDAO {
 		Statement stmt = ConexaoBD.conectBD();
 		boolean retorno = false;
 
-		String query = "select exists(select login, senha from aluno where login = '" + login + "' and senha = '"
-				+ senha + "') as login";
+		String query = "select exists(select login, senha from aluno where login = '" + login + "' and senha = '" + senha + "') as login";
 
 		try {
 			ResultSet rs = stmt.executeQuery(query);
@@ -25,8 +24,7 @@ public class AlunoDAO {
 				retorno = rs.getBoolean("login");
 			}
 		} catch (SQLException e) {
-			JOptionPane.showMessageDialog(null,
-					"Erro ao carregar os dados do banco de dados. \nDetalhes: " + e.getMessage());
+			JOptionPane.showMessageDialog(null, "Erro ao carregar os dados do banco de dados. \nDetalhes: " + e.getMessage());
 		}
 
 		return retorno;
@@ -102,11 +100,11 @@ public class AlunoDAO {
 		ResultSet retorno = null;
 
 		String query = "select"
-				+ "	a.id_aluno, a.matricula, a.cr, p.nome, t.nome as turma, t.turno, c.nome as curso, p.genero, p.idade, p.rg, p.cpf,"
+				+ "	a.id_aluno, a.login, a.senha, a.matricula, a.cr, p.nome, t.nome as turma, t.turno, c.nome as curso, p.genero, p.idade, p.rg, p.cpf,"
 				+ "    p.telefone, p.email, e.id_endereco, e.rua, e.numero, e.cep, e.bairro, e.cidade, e.estado"
 				+ "	from aluno a, pessoa p, endereco e, turma t, curso c"
 				+ "	where 	a.login = '" + login + "' and"
-				+ "			senha = '" + senha + "' and"
+				+ "			a.senha = '" + senha + "' and"
 				+ "			p.id_pessoa = a.id_pessoa and"
 				+ "         p.id_endereco = e.id_endereco and"
 				+ "         t.id_turma = a.id_turma and"

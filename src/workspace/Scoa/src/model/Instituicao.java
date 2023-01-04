@@ -88,7 +88,7 @@ public class Instituicao {
 		this.endereco = endereco;
 	}
 	
-	/* MÉTODOS PARA SEREM IMPLEMENTADOS
+	/* Mï¿½TODOS PARA SEREM IMPLEMENTADOS
 	
 	public void cadastrarCurso()
 	public void cadastrarDisciplina()
@@ -130,12 +130,12 @@ public class Instituicao {
 					
 				}
 			} catch (SQLException e) {
-				JOptionPane.showMessageDialog(null, "Falha na conexão com o banco de dados. \nDetalhes: "+ e.getMessage());
+				JOptionPane.showMessageDialog(null, "Falha na recuperaÃ§Ã£o dos dados da instituiÃ§Ã£o. \nDetalhes: "+ e.getMessage());
 			}
 			
 			return inst;
 		}else {
-			JOptionPane.showMessageDialog(null, "Login ou senha inválidos.");
+			JOptionPane.showMessageDialog(null, "Login ou senha invï¿½lidos.");
 			return inst;
 		}
 	}

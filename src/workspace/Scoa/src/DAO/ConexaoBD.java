@@ -17,7 +17,7 @@ public class ConexaoBD {
 			connection = DriverManager.getConnection(url);
 			stmt = connection.createStatement();
 		} catch (SQLException e) {
-			JOptionPane.showMessageDialog(null, "Falha na conex„o com o banco de dados. \nDetalhes: "+ e.getMessage());
+			JOptionPane.showMessageDialog(null, "Falha na conex√£o com o banco de dados. \nDetalhes: "+ e.getMessage());
 		}
 		
 		return stmt;
