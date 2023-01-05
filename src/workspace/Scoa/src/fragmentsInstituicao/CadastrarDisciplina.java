@@ -21,6 +21,9 @@ public class CadastrarDisciplina extends javax.swing.JInternalFrame {
 
         private javax.swing.JLabel lblCh;
 	    private javax.swing.JFormattedTextField inputCh;
+	    
+	    private javax.swing.JLabel lblCurso;
+	    private javax.swing.JFormattedTextField inputCurso;
 	
 		private javax.swing.JButton btnCadastrar;
 
@@ -42,8 +45,7 @@ public class CadastrarDisciplina extends javax.swing.JInternalFrame {
         // Definindo o separador
         separador = new javax.swing.JSeparator();
         separador.setBounds(25, 80, 930, 10);
-
-        // Definindo os campos relacionados à pessoa
+        
         lblNome = new javax.swing.JLabel();
         lblNome.setText("Nome:");
         lblNome.setBounds(25, 120, 36, 16);
@@ -64,6 +66,13 @@ public class CadastrarDisciplina extends javax.swing.JInternalFrame {
 
         inputCh = new javax.swing.JFormattedTextField();
         inputCh.setBounds(405, 142, 120, 22);
+        
+        lblCurso = new javax.swing.JLabel();
+        lblCurso.setText("Curso:");
+        lblCurso.setBounds(560, 120, 160, 16);
+
+        inputCurso = new javax.swing.JFormattedTextField();
+        inputCurso.setBounds(560, 142, 120, 22);
 
         btnCadastrar = new javax.swing.JButton();
         btnCadastrar.setText("Cadastrar");
@@ -85,6 +94,8 @@ public class CadastrarDisciplina extends javax.swing.JInternalFrame {
         contentPane.add(inputCreditos);
         contentPane.add(lblCh);
         contentPane.add(inputCh);
+        contentPane.add(lblCurso);
+        contentPane.add(inputCurso);
 
         contentPane.add(btnCadastrar);
         pack();
